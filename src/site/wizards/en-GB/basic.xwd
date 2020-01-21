@@ -1,0 +1,77 @@
+<wizard menus="Website" runtime="preview_site.php">
+
+	<learningObject icon="icLayout" remove="false" duplicate="false">
+  
+		<name type="TextInput" label="Learning Object Title"/>
+		<theme type="ThemeList" label="Theme" mandatory="true" defaultValue="default" />
+		<themeurl type="CheckBox" label="Disable theme url" defaultValue="false" optional="true" tooltip="By default the theme can now be changed with a url parameter e.g. &amp;theme=default which is useful for a variety of reasons. However as an author you can use this optional property, if you wish, to tick and disable this feature. The 'theme url parameter' to use when changing a theme by this method is shown in each theme's description and is often shorter and not the same as the display name of the theme."/>
+		<language type="LanguageList" label="Language" width="170" mandatory="true" defaultValue=""/>
+		
+		<searchGroup type="group" label="Search" optional="true" tooltip="Add the ability to search for relevant sections within a project" info="See the &lt;u&gt;&lt;a href='https://xot.xerte.org.uk/USER-FILES/81-xerteproject-site/media/Bootstrap%20Search%20Documentation.pdf' target='_blank'&gt;Bootstrap Search Guide&lt;/a&gt;&lt;/u&gt; for help setting up and using the search functionality">
+			<!--<search label="Free Text Search" type="CheckBox" defaultValue="false" tooltip="Find relevant sections by searching using a free text box" optional="true"/>-->
+			<!--<searchType label="Search Target" type="ComboBox" data="meta,title,text" options="Metadata,Titles,All Text" defaultValue="meta" tooltip="The data that the free text search is checked against. Metadata can be added to individual sections" optional="true"/>-->
+			<category label="Category Search" type="CheckBox" defaultValue="false" tooltip="Find relevant sections by selecting from a number a categories" optional="true"/>
+			<categoryInfo label="Categories" type="DataGrid" height="200" width="390" columns="2" colWidths="100,295" headers="Category name,Options" newRow="," defaultValue="|" optional="true" editable="1,1" wysiwyg="false,true" tooltip="Set up the categories used to filter in searches. Categories must have a name and contain one or more options (each option on a separate line)"/>
+			<categoryTxt label="Text" type="TextArea" height="150" defaultValue="" optional="true" tooltip="Search introduction text"/>
+		</searchGroup>
+		
+		<glossaryGroup type="group" label="Glossary" optional="true">
+			<glossary label="Glossary" type="DataGrid" height="200" width="390" columns="2" colWidths="100,295" editable="1,1" controls="1" headers="Term,Definition" newRow="term,definition" defaultValue="term|definition" optional="true" wysiwyg="false,true"/>
+			<glossaryHover label="Show Definition on Hover" type="Checkbox" defaultValue="true" optional="true"/>
+			<glossaryPage type="ComboBox" data="none,first,last" options="None,First Page,Last Page" optional="true" label="Glossary Page" defaultValue="none" width="175"/>
+			<glossaryMenu type="ComboBox" data="both,menu,headings,neither" options="Menu and Headings,Menu Only,Headings Only,No Menu or Headings" optional="true" label="Glossary Page Navigation" defaultValue="both" width="175"/>
+		</glossaryGroup>
+		
+		<headerGroup type="group" label="Header" optional="true">
+			<header type="Media" optional="true" label="Image"/>
+			<headerPos type="ComboBox" data="left,center,right" options="Left,Centre,Right" optional="true" label="Image Position" defaultValue="left" width="175"/>
+			<headerRepeat type="ComboBox" data="repeat,repeat-x,repeat-y,no-repeat" options="Horizontal and Vertical Repeat,Horizontal Repeat,Vertical Repeat,No Repeat" optional="true" label="Image Repeat" defaultValue="repeat" width="175"/>
+			<headerColour type="ColourPicker" optional="true" label="Background Colour"/>
+			<headerTextColour type="ColourPicker" optional="true" label="Text Colour"/>
+			<logoR type="Media" optional="true" label="Logo (Right)"/>
+			<logoL type="Media" optional="true" label="Logo (Left)"/>
+			<logoRHide label="Hide Default Logo (Right)" type="Checkbox" defaultValue="false" optional="true"/>
+			<logoLHide label="Hide Default Logo (Left)" type="Checkbox" defaultValue="false" optional="true"/>
+            <headerHide label="Hide Header" type="Checkbox" defaultValue="false" optional="true"/>
+		</headerGroup>
+        
+        <navbarGroup type="group" label="Navigation Bar" optional="true">
+			<navbarPos type="ComboBox" data="above,below" options="Above Header,Below Header" optional="true" label="Position" defaultValue="above" width="175"/>
+			<navbarColour type="ColourPicker" optional="true" label="Background Colour"/>
+			<navbarTextColour type="ColourPicker" optional="true" label="Text Colour"/>
+            <navbarTextHoverColour type="ColourPicker" optional="true" label="Text Hover Colour"/>
+            <navbarHide label="Hide Navigation Bar" type="Checkbox" defaultValue="false" optional="true"/>
+		</navbarGroup>
+		
+		<socialGroup type="group" label="Social" optional="true" cols="3" info="Select below which social media options you wish to enable or disable. Removing this group will enable them all.">
+			<facebook label="Facebook" type="Checkbox" defaultValue="true" optional="true"/>
+			<twitter label="Twitter" type="Checkbox" defaultValue="true" optional="true"/>
+			<google label="Google+" type="Checkbox" defaultValue="true" optional="true"/>
+			<linkedin label="Linkedin" type="Checkbox" defaultValue="true" optional="true"/>
+			<scoopit label="Scoop.it!" type="Checkbox" defaultValue="true" optional="true"/>
+			<pinterest label="Pinterest" type="Checkbox" defaultValue="true" optional="true"/>
+			<email label="Email" type="Checkbox" defaultValue="true" optional="true"/>
+			<yammer label="Yammer" type="Checkbox" defaultValue="true" optional="true"/>
+			<addthis label="AddThis" type="Checkbox" defaultValue="true" optional="true"/>
+		</socialGroup>
+		
+        <footerGroup type="group" label="Footer" optional="true">
+            <footerHide label="Hide Footer" type="Checkbox" defaultValue="false" optional="true"/>
+            <customFooter type="TextArea" height="60" label="Custom Footer Content"/>
+			<footerPos type="ComboBox" data="above,below,replace" options="Above Social Icons,Below Social Icons,Replace Social Icons" optional="true" label="Custom Footer Position" defaultValue="above" width="175"/>
+            <footerColour type="ColourPicker" optional="true" label="Footer Background Colour"/>
+		</footerGroup>
+		
+		<print type="CheckBox" label="Print Button" defaultValue="true" optional="true" tooltip="Add a print button to the navigation bar. Pages can still be printed via browser controls if button is not added"/>
+		<notes label="Notes" type="TextArea" height="150" defaultValue="" optional="true" tooltip="Your notes for the project. These are not shown in the live project."/>
+		<libs type="DataGrid" label="JavaScript Libraries" optional="true" height="150" width="390" columns="1" colWidths="390" editable="1" controls="1" headers="Library URL" newRow="Enter URL" rendererOptions="none" defaultValue="Enter URL"/>
+		<stylesheet type="Media" optional="true" label="Stylesheet"/>
+		<styles type="script" height="200" optional="true" label="Styles"/>
+		<script type="script" height="200" optional="true" label="Script" defaultValue="// JavaScript / jQuery"/>
+		<authorSupport label="Author Support" type="Checkbox" defaultValue="true" optional="true"/>
+		
+		<newNodes>
+		</newNodes>
+
+	</learningObject>
+</wizard>

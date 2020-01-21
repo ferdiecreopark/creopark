@@ -1,0 +1,17 @@
+<wizard menus="Media">
+  <pageWizard remove="true" duplicate="false">
+    <newNodes>
+      <flashPaper><![CDATA[<flashPaper name="Enter Page Title" url="Select a Flash Paper SWF File"/>]]></flashPaper>
+    </newNodes>
+  </pageWizard>
+
+  <!-- FLASH PAPER================================ -->
+  <flashPaper menu="Media" menuItem="Flash Paper" hint="A page for incorporating Flash Paper swfs. Flash Paper provides a convenient way of displaying Word or Powerpoint files in your presentation." icon="icPageWhite" thumb="thumbs/flashPaper.jpg" remove="true" deprecated="This page is no longer supported">
+
+    <name label="Page Title" type="TextInput" wysiwyg="true"/>
+    <url label="Flash Paper SWF File" type="media"/>
+
+  </flashPaper>
+
+
+</wizard>

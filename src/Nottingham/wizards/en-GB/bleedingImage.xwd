@@ -1,0 +1,34 @@
+<wizard menus="Media">
+  <pageWizard remove="true" duplicate="false">
+    <newNodes>
+      <bleedingImage><![CDATA[<bleedingImage name="Enter Page Title" align="Left"  url="Select an Image" tip="Enter a Description for Accessibility" imagesize="auto">Enter text for the page here</bleedingImage>]]></bleedingImage>
+    </newNodes>  
+  </pageWizard>
+
+  <!-- Bleeding Image Page=========================================================== -->
+  <bleedingImage menu="Media" menuItem="Advanced Image" hint="A text and graphics page with a flexible layout including bleeding the image at one edge of the stage or adding a margin." label="Page Text" type="text"  height="200"  icon="icPageWhiteImage2" thumb="thumbs/bleedingImage.jpg" remove="true">
+
+    <name label="Page Title" type="TextInput" wysiwyg="true" />
+    <align label="Align Text" options="Left,Right,Top,Bottom" data="Left,Right,Top,Bottom" defaultValue="Left" type="ComboBox"  width="100"/>
+	
+	<image type="group" label="Image">
+		<url label="File" type="media" />
+		<imagesize label="Size" options="Auto,Full screen" data="auto,full screen" defaultValue="auto" type="ComboBox"  width="100"/>
+		<tip label="Description" type="TextInput" />
+	</image>
+
+	<linkInfo type="group" label="Link" optional="true">
+		<link label="URL" type="textInput" optional="true" defaultValue="Enter Link Address"/>
+		<linkIntro label="Description" type="textInput" optional="true" defaultValue="Enter Link Description"/>	
+		<linktarget label="Target" type="textInput" width="70" defaultValue="_blank" optional="true" />
+	</linkInfo>
+	
+    <sound label="Sound" type="media" optional="true"/>
+    <magnifier label="Magnifier"  type="checkBox" defaultValue="false" optional="true"/>
+    <addmargin label="Image Margin" type="Checkbox" defaultValue="false"  optional="true"/>
+    <size label="Text Size" type="ComboBox"  options="12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,48,70" data="12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,48,70" defaultValue="18" width="100" optional="true" deprecated="This property is deprecated. You can change the text's size in the text toolbar."/>
+    
+  </bleedingImage>
+  
+  
+</wizard>

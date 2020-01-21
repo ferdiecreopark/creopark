@@ -1,0 +1,51 @@
+<wizard menus="Interactivity">
+  <pageWizard remove="true" duplicate="false">
+    <newNodes>
+      <dragDropLabel><![CDATA[<dragDropLabel name="Enter Page Title" text="Enter text for the page here" imgWidth="Medium" url="Select an Image" interactivity="Describe" submitText="Submit" tip="Enter a Description for Accessibility" align="Left" showHighlight="true" highlightColour="0xFFFF00" tryAgainTxt="Try again"/>]]></dragDropLabel>
+    </newNodes>
+  </pageWizard>
+
+  <!-- DRAG DROP LABEL INTERACTION==================== -->
+  <dragDropLabel menu="Interactivity" menuItem="Drag and Drop Labelling" hint="An interactive labelling exercise. Mark up an image with regions and add a title and description for each region." icon="icTagBlue" thumb="thumbs/labelling.jpg" remove="true">
+
+    <name label="Page Title" type="TextInput" wysiwyg="true"/>
+    <text  label="Page Text" type="TextArea" height="250"/>
+	<align label="Align Text" options="Left,Right" type="ComboBox" data="Left,Right" defaultValue="Left" width="100"/>
+	
+	<image type="group" label="Image">
+		<url label="File" type="media"/>
+		<tip label="Description" type="TextInput"/>
+	</image>
+	
+	<highlight type="group" label="Hotspot Highlight">
+		<showHighlight label="Show Highlight" type="CheckBox" defaultValue="true"/>
+		<highlightColour label="Colour" type="ColourPicker" defaultValue="0xFFFF00"/>
+	</highlight>
+	
+    <interactivity label="Interactivity" options="Describe,Match" type="ComboBox" data="Describe,Match" defaultValue="Describe" mandatory="true" width="100"/>
+	
+	<tryAgainTxt label="Try Again Text" type="TextInput" wysiwyg="true" divider="true" language="true" />
+	<submitText label="Submit button label for Match" type="TextInput" wysiwyg="true" language="true" />
+	
+	<imgWidth label="Image Width" options="Small,Medium,Large" type="ComboBox" data="Small,Medium,Large" defaultValue="Medium" optional="true"/>
+	
+	<labelPos label="Label Position" type="ComboBox" data="image,text" options="Below Image,Below Text" defaultValue="image" optional="true"/>
+	
+	<trackingWeight label="Tracking Score Weight (0=Off)" optional="true" type="textInput" width="120" defaultValue="1.0" />
+	
+    <newNodes>
+	  <hotspot><![CDATA[<hotspot name="Hotspot" text="Description for the hotspot" x="0" y="0" w="100" h="100" />]]></hotspot>
+    </newNodes>
+
+  </dragDropLabel>
+
+  <!-- HOTSPOT============================== -->
+  <hotspot label="Edit Hotspot" menuItem="Hotspot" type="hotSpot"  icon="icLayers" remove="true">
+
+    <name label="Drag Label" type="TextInput" wysiwyg="true"/>
+    <text label="Text" type="TextArea" height="250"/>
+	<alttext label="Tooltip Description" type="script" height="100" defaultValue="Enter a Description for Accessibility" optional="true" />
+
+  </hotspot> 
+
+</wizard>

@@ -1,0 +1,17 @@
+<wizard menus="Misc">
+  <pageWizard remove="true" duplicate="false">
+    <newNodes>  
+      <geocommons><![CDATA[<geocommons name="Enter Page Title" src="Enter embed code here"/>]]></geocommons>
+	</newNodes>
+  </pageWizard>
+  
+    <!-- GEOCOMMONS ================================ -->
+  <geocommons  menu="Misc" menuItem="GeoCommons Map" hint="Embed GeoCommons Maps" icon="icGeoComm" thumb="thumbs/googleMap.jpg" remove="true" deprecated="This page is no longer supported">
+
+    <name label="Page Title" type="TextInput" wysiwyg="true"/>
+    <src label="IFrame code" type="TextInput"/>
+	
+	<description label="Description" type="TextInput" wysiwyg="true" optional="true"/>
+
+  </geocommons>
+</wizard>  

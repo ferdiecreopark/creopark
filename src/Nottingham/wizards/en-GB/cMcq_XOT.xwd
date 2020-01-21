@@ -1,0 +1,40 @@
+<wizard menus="Connectors" restrict="template" modelFile="cMcq">
+  <pageWizard remove="true" duplicate="false">
+    <newNodes>  
+      <cMcq><![CDATA[<cMcq name="Enter Page Title" instruction="Enter Instruction" prompt="Enter a Prompt" align="Left" panelWidth="Medium"
+	  home="false" back="false" next="false"
+	  confirmBtnTxt="Confirm" 
+	  notFoundMessage="could not be found in this project." 
+	  notSetMessage="A destination page has not been set for this connection" />]]></cMcq>
+	</newNodes>
+  </pageWizard>
+
+  
+  <!-- MCQ PAGE =========================================== -->
+  <cMcq menu="Connectors" menuItem="Multiple Choice Connector" icon="icConMCQ" hint="Pose a question with multiple answer options. When selected, each answer will take you to another page in the project or present further information."  thumb="thumbs/connectorMCQ.jpg" remove="true">
+
+    <name label="Page Title" type="TextInput" wysiwyg="true" />
+    <instruction label="Instruction" type="TextArea" height="100"/>	
+    <prompt label="Question" type="TextArea" height="100"/>
+    <align label="Align Text" options="Left,Right" type="ComboBox" data="Left,Right" width="100"/>
+    <panelWidth label="Panel Width" options="Small,Medium,Large,Full" type="ComboBox" data="Small,Medium,Large,Full" width="100"/>
+
+    <confirmBtnTxt label="Confirm Button Label" type="TextInput" wysiwyg="true" divider="true" language="true" />
+    <confirmBtnTip label="Confirm Button Tip" type="textInput"  language="true" deprecated="This property is no longer required" />	
+    <confirmBtnWidth label="Confirm Button Width" type="NumericStepper" min="100" max="250" step="10" width="100" defaultValue="100" language="true" deprecated="Width is now set automatically"/>	
+
+    <info><![CDATA[<b>For full details on how to use the Multiple Choice Connector Page. <u><a href="http://xerte.org.uk/docs/xot/help/MultipleChoiceConnectorPageGuide.pdf" target="_blank">Click here</a></u></b>]]></info>
+
+    <newNodes>
+      <cOption><![CDATA[<cOption name="Answer" text="Here is an option" destination="" />]]></cOption>
+    </newNodes>
+	
+  </cMcq>
+
+  <cOption menuItem="Answer" icon="icBullet" remove="true">
+    <text label="Answer" type="TextArea" height="100"/>
+    <name label="Label" type="TextInput" mandatory="true" defaultValue="Answer" wysiwyg="false"/>
+    <destination label="Destination Page" type="pageList" defaultValue=""/>
+  </cOption>
+
+</wizard>

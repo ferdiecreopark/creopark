@@ -1,0 +1,25 @@
+<wizard menus="Media">
+  <pageWizard remove="true" duplicate="false">
+    <newNodes>
+      <pdf><![CDATA[<pdf name="Enter Page Title" url="Select a PDF File" open="Open PDF"/>]]></pdf>
+    </newNodes>
+  </pageWizard>
+
+  <!-- PDF================================ -->
+  <pdf menu="Media" menuItem="PDF File" hint="Incorporate PDF files in your project." icon="icPDF" thumb="thumbs/pdf.jpg" remove="true">
+
+    <name label="Page Title" type="TextInput" wysiwyg="true"/>
+    <url label="PDF File" type="media"/>
+    
+    <pdfWidth label="PDF Width" options="Small,Medium,Large,Full" type="ComboBox" data="small,medium,large,full" defaultValue="full" width="100" optional="true"/>
+	
+	<textGroup type="group" label="Page Text" optional="true">
+		<text label="Text" type="TextArea" defaultValue="Enter text for the page here" height="200" optional="true"/>
+		<position label="Position" options="Left,Right,Top" type="ComboBox" data="L,R,T" defaultValue="L" width="100" optional="true"/>
+	</textGroup>
+
+	<open label="Open PDF" type="TextInput" wysiwyg="true" language="true"/>
+
+  </pdf>
+
+</wizard>
